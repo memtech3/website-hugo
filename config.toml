@@ -1,0 +1,10 @@
+baseURL = "http://micahguttman.com"
+languageCode = "en-us"
+title = "Micah Shaw Guttman"
+theme = "micah"
+[params]
+  githubURL = "http://github.com/memtech3"
+  logo = "micahshawguttman.png"
+  description = "A passionately aspiring IT Administrator, professional problem solver, maker and programmer"
+  handsOnExperience = ["Linux Administration", "Solidworks", "Fusion360"]
+  textbookKnowledge =  []
