@@ -1,26 +1,42 @@
-<div class="jumbotron w-50 mx-auto text-light text-center" style="background-color: #00000000; margin-top: 3.125%;">
-    <img src="{{ $.Site.Params.logo }}" height="200">
-    <h1 class="display-4">{{ $.Site.Title }}</h1>
-     <p class="lead">{{ $.Site.Params.description}}</p>
-     <a class="btn btn-dark btn-lg" href="{{ $.Site.Params.githubURL}}" role="button">Github <img src="github logo-light.svg" height="30"></a>
-   </div>
-   <div id="gradient" class="background">
-     <span></span>
-     <span></span>
-     <span></span>
-     <span></span>
-     <span></span>
-   </div>
-   <div class="jumbotron">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </div>   
-   {{ range $.Site.Params.handsOnExperience }}
-    {{ . }}
+<div id="landing">
+    <div class="jumbotron w-50 mx-auto text-light text-center" style="background-color: #00000000; margin-top: 3.125%;">
+        <img src="{{ $.Site.Params.logo }}" height="200">
+        <h1 class="display-4">{{ $.Site.Title }}</h1>
+         <p class="lead">{{ $.Site.Params.description}}</p>
+         <a class="btn btn-dark btn-lg" href="{{ $.Site.Params.githubURL}}" role="button"><img src="github logo-light.svg" height="60"></a>
+         <a class="btn btn-dark btn-lg" href="mailto:{{ $.Site.Params.email}}" role="button"><img src="logo-gmail.png" height="60"></a>
+       </div>
+       <div id="gradient" class="background">
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+         <span></span>
+       </div>
+</div> 
+<div class="alert alert-primary" role="alert">Nothing to see here...</div>
+{{ range where .Pages "Type" "experience" }}
+<li>
+    <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+</li>
 {{ end }}
+  <div class="container">
+    <table class="table table-dark table-borderless">
+        <thead>
+          <tr>
+            <th scope="col">Skills</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{ range $.Site.Params.handsOnExperience }}
+            <tr>
+                <td>{{ . }}</td>
+              </tr>
+        {{ end }}
+        </tbody>
+      </table>
+  </div>
+
    <style>
    :root {
      --background: linear-gradient(150deg, #017BFF 15%, #01a5ff 30%, #01afff 70%, #01c4ff 95%);
@@ -56,5 +72,10 @@
        top: 0;
        left: 0;
        z-index: -100;
+   }
+   #landing{
+       width: 100%;
+       height: 100vh;
+       top: 0;
    }
    </style>
