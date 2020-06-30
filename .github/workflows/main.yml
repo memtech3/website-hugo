@@ -20,6 +20,6 @@ jobs:
       uses: benmatselby/hugo-deploy-gh-pages@master
       env:
         HUGO_VERSION: 0.68.3
-        TARGET_REPO: memtech3.github.io
+        TARGET_REPO: memtech3/memtech3.github.io
         TOKEN: ${{ secrets.TOKEN }}
         CNAME: micahguttman.com
