@@ -16,9 +16,9 @@
 </div> 
 <div class="alert alert-primary" role="alert">Nothing to see here...</div>
 {{ range where .Pages "Type" "experience" }}
-<li>
+<ul>
     <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
-</li>
+</ul>
 {{ end }}
   <div class="container">
     <table class="table table-dark table-borderless">
